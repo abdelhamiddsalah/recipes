@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:recipes/core/constants/colors.dart';
 import 'package:recipes/features/Onbording/data/contentList.dart';
 
 
@@ -39,21 +40,23 @@ late  PageController _controller;
               },
               itemBuilder: (_, i) {
                 return Padding(
-                  padding: const EdgeInsets.all(40),
-                  child: Column(
+                  padding: const EdgeInsets.all(20),
+                  child:  Column(
+                    
                     children: [
+                     const SizedBox(height: 80,),
                       Image.asset(
                         contents[i].image!,
-                        height: 300,
+                        height: MediaQuery.of(context).size.height*.3,
                       ),
                       Text(
                         contents[i].title!,
                         style: TextStyle(
-                          fontSize: 35,
+                          fontSize: 22,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(height: 20),
+                    const  SizedBox(height: 20),
                       Text(
                         contents[i].discription!,
                         textAlign: TextAlign.center,
@@ -81,19 +84,24 @@ late  PageController _controller;
             height: 60,
             margin: EdgeInsets.all(40),
             width: double.infinity,
-            child: FilledButton(
-              child: Text(
-                  currentIndex == contents.length - 1 ? "Continue" : "Next"),
-              onPressed: () {
-                if (currentIndex == contents.length - 1) {
-                 
-                }
-                _controller.nextPage(
-                  duration: Duration(milliseconds: 100),
-                  curve: Curves.bounceIn,
-                );
-              },
-             
+            child: Container(
+              width: MediaQuery.of(context).size.width*.9,
+              height: 100,
+              color: mainColor,
+              child: MaterialButton(
+                child: Text(
+                    currentIndex == contents.length - 1 ? "Continue" : "Next"),
+                onPressed: () {
+                  if (currentIndex == contents.length - 1) {
+                   
+                  }
+                  _controller.nextPage(
+                    duration: Duration(milliseconds: 100),
+                    curve: Curves.bounceIn,
+                  );
+                },
+               
+              ),
             ),
           )
         ],
@@ -108,7 +116,7 @@ late  PageController _controller;
       margin: EdgeInsets.only(right: 5),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        color: Theme.of(context).primaryColor,
+        color:mainColor,
       ),
     );
   }
