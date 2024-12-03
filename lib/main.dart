@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:recipes/core/myrouter/routerApp.dart';
 import 'package:recipes/features/Onbording/ui/pages/onboardingPage.dart';
 
 void main() {
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-   //   home:  Onbording(),
+   routerConfig:Routerapp.router ,
     );
   }
 }
