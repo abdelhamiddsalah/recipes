@@ -40,7 +40,7 @@ late  PageController _controller;
               },
               itemBuilder: (_, i) {
                 return Padding(
-                  padding: const EdgeInsets.all(20),
+                  padding: const EdgeInsets.all(16),
                   child:  Column(
                     
                     children: [
@@ -57,12 +57,15 @@ late  PageController _controller;
                         ),
                       ),
                     const  SizedBox(height: 20),
-                      Text(
-                        contents[i].discription!,
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: 18,
-                          color: Colors.grey,
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal:  40.0),
+                        child: Text(
+                          contents[i].discription!,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.grey,
+                          ),
                         ),
                       )
                     ],
@@ -81,27 +84,26 @@ late  PageController _controller;
             ),
           ),
           Container(
-            height: 60,
-            margin: EdgeInsets.all(40),
-            width: double.infinity,
-            child: Container(
-              width: MediaQuery.of(context).size.width*.9,
-              height: 100,
-              color: mainColor,
-              child: MaterialButton(
-                child: Text(
-                    currentIndex == contents.length - 1 ? "Continue" : "Next"),
-                onPressed: () {
-                  if (currentIndex == contents.length - 1) {
-                   
-                  }
-                  _controller.nextPage(
-                    duration: Duration(milliseconds: 100),
-                    curve: Curves.bounceIn,
-                  );
-                },
-               
-              ),
+             margin: EdgeInsets.all(20),
+            width: MediaQuery.of(context).size.width,
+            height: 50,
+           
+            decoration: BoxDecoration( color: mainColor,
+              borderRadius: BorderRadius.circular(20)
+            ),
+            child: MaterialButton(
+              child: Text(
+                  currentIndex == contents.length - 1 ? "Get Started" : "Next"),
+              onPressed: () {
+                if (currentIndex == contents.length - 1) {
+                 
+                }
+                _controller.nextPage(
+                  duration: Duration(milliseconds: 100),
+                  curve: Curves.bounceIn,
+                );
+              },
+             
             ),
           )
         ],
@@ -109,14 +111,14 @@ late  PageController _controller;
     );
   }
 
-  Container buildDot(int index, BuildContext context) {
+  Container buildDot(  int index, BuildContext context) {
     return Container(
       height: 10,
       width: currentIndex == index ? 25 : 10,
       margin: EdgeInsets.only(right: 5),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        color:mainColor,
+        color:currentIndex == index ?Colors.grey: mainColor,
       ),
     );
   }
