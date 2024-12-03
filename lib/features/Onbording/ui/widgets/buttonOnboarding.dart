@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:recipes/core/constants/colors.dart';
 import 'package:recipes/features/Onbording/data/contentList.dart';
 
@@ -15,29 +16,25 @@ class Buttonondoarding extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-       margin: EdgeInsets.all(20),
+      margin: EdgeInsets.all(20),
       width: MediaQuery.of(context).size.width,
       height: 50,
-     
-      decoration: BoxDecoration( color: mainColor,
-        borderRadius: BorderRadius.circular(20)
-      ),
+      decoration: BoxDecoration(
+          color: mainColor, borderRadius: BorderRadius.circular(20)),
       child: MaterialButton(
         child: Text(
-          style: TextStyle(color: Colors.white),
+            style: TextStyle(color: Colors.white),
             currentIndex == contents.length - 1 ? "Get Started" : "Next"),
         onPressed: () {
           if (currentIndex == contents.length - 1) {
-           
+            GoRouter.of(context).go('/h');
           }
           _controller.nextPage(
             duration: Duration(milliseconds: 100),
             curve: Curves.bounceIn,
           );
         },
-       
       ),
     );
   }
 }
-
