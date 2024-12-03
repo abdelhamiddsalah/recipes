@@ -27,6 +27,7 @@ late  PageController _controller;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Column(
         children: [
           Expanded(
@@ -93,6 +94,7 @@ late  PageController _controller;
             ),
             child: MaterialButton(
               child: Text(
+                style: TextStyle(color: Colors.white),
                   currentIndex == contents.length - 1 ? "Get Started" : "Next"),
               onPressed: () {
                 if (currentIndex == contents.length - 1) {
