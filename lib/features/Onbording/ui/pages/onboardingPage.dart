@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:recipes/core/constants/colors.dart';
 import 'package:recipes/features/Onbording/data/contentList.dart';
+import 'package:recipes/features/Onbording/ui/widgets/buttonOnboarding.dart';
+import 'package:recipes/features/Onbording/ui/widgets/circalContainer.dart';
+import 'package:recipes/features/Onbording/ui/widgets/rowCircalContainers.dart';
 
 
 class Onbording extends StatefulWidget {
@@ -75,53 +78,14 @@ late  PageController _controller;
               },
             ),
           ),
-          Container(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: List.generate(
-                contents.length,
-                (index) => buildDot(index, context),
-              ),
-            ),
-          ),
-          Container(
-             margin: EdgeInsets.all(20),
-            width: MediaQuery.of(context).size.width,
-            height: 50,
-           
-            decoration: BoxDecoration( color: mainColor,
-              borderRadius: BorderRadius.circular(20)
-            ),
-            child: MaterialButton(
-              child: Text(
-                style: TextStyle(color: Colors.white),
-                  currentIndex == contents.length - 1 ? "Get Started" : "Next"),
-              onPressed: () {
-                if (currentIndex == contents.length - 1) {
-                 
-                }
-                _controller.nextPage(
-                  duration: Duration(milliseconds: 100),
-                  curve: Curves.bounceIn,
-                );
-              },
-             
-            ),
-          )
+          Rowcircalcontainers(currentIndex: currentIndex),
+          Buttonondoarding(currentIndex: currentIndex, controller: _controller)
         ],
       ),
     );
   }
 
-  Container buildDot(  int index, BuildContext context) {
-    return Container(
-      height: 10,
-      width: currentIndex == index ? 25 : 10,
-      margin: EdgeInsets.only(right: 5),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-        color:currentIndex == index ?Colors.grey: mainColor,
-      ),
-    );
-  }
+ 
 }
+
+
