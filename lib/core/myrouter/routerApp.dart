@@ -1,6 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:recipes/features/Onbording/ui/pages/onboardingPage.dart';
-import 'package:recipes/features/home/ui/pages/home_view.dart';
+import 'package:recipes/features/home/ui/home_view.dart';
 
 abstract class Routerapp {
   static var router = GoRouter(routes: <RouteBase>[
@@ -14,6 +14,12 @@ abstract class Routerapp {
       path: '/h',
       builder: (context, state) {
         return  HomeView();
+      },
+    ),
+    GoRoute(
+      path: '/h',
+      builder: (context, state) {
+        return  DetailsView();
       },
     ),
   ]);
