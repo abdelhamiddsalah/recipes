@@ -3,27 +3,26 @@ import 'package:recipes/core/constants/colors.dart';
 
 class Cotaineritemcountry extends StatelessWidget {
   const Cotaineritemcountry({
-    super.key,
+    super.key, required this.flag, required this.name,
   });
-
+  final String flag;
+  final String name;
   @override
   Widget build(BuildContext context) {
     return Container(
-      
       decoration: BoxDecoration(
         color: mainColor,
         borderRadius: BorderRadius.circular(10),
       ),
       child: Padding(
-        padding: const EdgeInsets.all(5.0),
+        padding: const EdgeInsets.all(9.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
-            Text('🇸🇩', style: TextStyle(fontSize: 24)),
+          children:  [
+            Text(flag, style: TextStyle(fontSize: 24)),
             SizedBox(width: 8),
-            
             Text(
-              'Palestineeeeee',
+              name,
               style: TextStyle(fontSize: 18),
             ),
           ],
