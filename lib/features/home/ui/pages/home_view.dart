@@ -25,10 +25,11 @@ class HomeView extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             SizedBox(
-              height: 120,
+              height: MediaQuery.of(context).size.height*.14,
               child: GridViewitemscountry(),
 
             ),
+             const SizedBox(height: 20),
               const Text(
               'All Recipes ',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
