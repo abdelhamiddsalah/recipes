@@ -20,7 +20,7 @@ class Cotaineritemcountry extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children:  [
-            Text(flag, style: TextStyle(fontSize: 24.sp)),
+            Text(flag, style: TextStyle(fontSize: 20.sp)),
          const   SizedBox(width: 8),
             Text(
               name,

@@ -27,17 +27,8 @@ class HomeView extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             SizedBox(
-  height: 120,
-  child: MasonryGridView.count(
-    scrollDirection: Axis.horizontal,
-    crossAxisCount: 2, 
-    mainAxisSpacing: 10, 
-    crossAxisSpacing: 10, 
-    itemCount: 10,
-    itemBuilder: (BuildContext context, int index) {
-      return const Cotaineritemcountry();
-    },
-  ),
+  height: MediaQuery.of(context).size.height*.14,
+  child: GridViewitemscountry()
 ),
 
              const SizedBox(height: 20),
@@ -45,7 +36,7 @@ class HomeView extends StatelessWidget {
               'All Recipes ',
               style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 15),
+          
             const ListviewInHome(),
           ],
         ),
