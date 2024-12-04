@@ -28,7 +28,7 @@ class desc_in_item extends StatelessWidget {
           const Row(
             children: [
               rowstar(),
-              SizedBox(width: 30), // Add space between row elements
+              SizedBox(width: 20), // Add space between row elements
               Row(
                 children: [
                   Icon(
@@ -51,7 +51,7 @@ class desc_in_item extends StatelessWidget {
               onPressed: () {},
               icon: const Icon(
                 Icons.bookmark,
-                size: 30,
+                size: 25,
                 color: mainColor, // Use the mainColor as the icon color
               ),
             ),
