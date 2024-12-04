@@ -1,6 +1,7 @@
 // ignore_for_file: camel_case_types
 
 import 'package:flutter/material.dart';
+import 'package:recipes/features/details/ui/widgets/rowstar.dart';
 
 class title_in_details extends StatelessWidget {
   const title_in_details({
@@ -19,14 +20,10 @@ class title_in_details extends StatelessWidget {
         fontWeight: FontWeight.bold,
       ),
     ),
-        Row(
-          children: [
-            Icon(Icons.star, color: Colors.amber, size: 20),
-            SizedBox(width: 4),
-            Text('(4.5)', style: TextStyle(fontSize: 16)),
-          ],
-        ),
+        rowstar(),
       ],
     );
   }
 }
+
+

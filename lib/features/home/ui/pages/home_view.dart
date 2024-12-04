@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:recipes/core/constants/colors.dart';
 import 'package:recipes/features/home/ui/widgets/appBarHomePage.dart';
+import 'package:recipes/features/home/ui/widgets/listview_in_home.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -26,23 +27,24 @@ class HomeView extends StatelessWidget {
               height: 120,
               child: MasonryGridView.count(
                 scrollDirection: Axis.horizontal,
-                        
-                       itemCount: 10,
-                  crossAxisCount: 2, // عدد العناصر في العمود الواحد
-                  mainAxisSpacing: 10, // المسافة الأفقية بين العناصر
-                  crossAxisSpacing: 10, 
-                    // عدد العناصر
+                crossAxisCount: 2, // عدد العناصر في العمود الواحد
+                mainAxisSpacing: 10, // المسافة الأفقية بين العناصر
+                crossAxisSpacing: 10, // المسافة العمودية بين العناصر
+                itemCount: 10, // عدد العناصر
                 itemBuilder: (BuildContext context, int index) {
                   return const Cotaineritemcountry(); // إعادة تصميم العنصر
                 },
               ),
             ),
+            const SizedBox(height: 15),
+            const ListviewInHome(),
           ],
         ),
       ),
     );
   }
 }
+
 
 class Cotaineritemcountry extends StatelessWidget {
   const Cotaineritemcountry({
