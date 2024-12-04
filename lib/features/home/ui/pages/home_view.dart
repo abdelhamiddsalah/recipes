@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:recipes/core/constants/colors.dart';
 import 'package:recipes/features/home/ui/widgets/GridViewItemsCounty.dart';
@@ -19,9 +20,9 @@ class HomeView extends StatelessWidget {
           children: [
             const Appbarhomepage(),
             const SizedBox(height: 20),
-            const Text(
+             Text(
               'What is your favorite country?',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 20),
             SizedBox(
@@ -30,9 +31,9 @@ class HomeView extends StatelessWidget {
 
             ),
              const SizedBox(height: 20),
-              const Text(
+               Text(
               'All Recipes ',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold),
             ),
           ],
         ),

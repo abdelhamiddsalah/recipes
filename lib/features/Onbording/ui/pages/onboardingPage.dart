@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:recipes/core/constants/colors.dart';
 import 'package:recipes/features/Onbording/data/contentList.dart';
 import 'package:recipes/features/Onbording/ui/widgets/buttonOnboarding.dart';
 import 'package:recipes/features/Onbording/ui/widgets/circalContainer.dart';
 import 'package:recipes/features/Onbording/ui/widgets/rowCircalContainers.dart';
+import 'package:recipes/main.dart';
 
 
 class Onbording extends StatefulWidget {
@@ -56,7 +58,7 @@ late  PageController _controller;
                       Text(
                         contents[i].title!,
                         style: TextStyle(
-                          fontSize: 22,
+                          fontSize: 22.sp,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -67,7 +69,7 @@ late  PageController _controller;
                           contents[i].discription!,
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                            fontSize: 15,
+                            fontSize: 15.sp,
                             color: Colors.grey,
                           ),
                         ),

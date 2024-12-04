@@ -1,5 +1,6 @@
 // details_content.dart
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:recipes/core/constants/colors.dart';
 import 'package:recipes/features/details/ui/widgets/title_in_details.dart';
 
@@ -14,7 +15,7 @@ class DetailsContent extends StatelessWidget {
         decoration: const BoxDecoration(
           color: Colors.white,
         ),
-        child: const SingleChildScrollView(
+        child:  SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -22,17 +23,17 @@ class DetailsContent extends StatelessWidget {
               SizedBox(height: 16),
               Text(
                 'Description',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 8),
               Text(
                 'Indonesian Fried Chicken or Ayam Goreng, is a delicious and popular dish that showcases the vibrant flavors of Indonesian cuisine.',
-                style: TextStyle(fontSize: 16, color: greyColor),
+                style: TextStyle(fontSize: 16.sp, color: greyColor),
               ),
               SizedBox(height: 16),
               Text(
                 'Ingredients',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 8),
               Text(

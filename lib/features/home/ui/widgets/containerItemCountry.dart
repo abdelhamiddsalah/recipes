@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:recipes/core/constants/colors.dart';
 
 class Cotaineritemcountry extends StatelessWidget {
@@ -19,11 +20,11 @@ class Cotaineritemcountry extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children:  [
-            Text(flag, style: TextStyle(fontSize: 24)),
-            SizedBox(width: 8),
+            Text(flag, style: TextStyle(fontSize: 24.sp)),
+         const   SizedBox(width: 8),
             Text(
               name,
-              style: TextStyle(fontSize: 18),
+              style: TextStyle(fontSize: 16.sp),
             ),
           ],
         ),

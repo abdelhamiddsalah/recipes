@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Appbarhomepage extends StatelessWidget {
   const Appbarhomepage({
@@ -10,7 +11,7 @@ class Appbarhomepage extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-      const   Text(' Recipes',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
+         Text(' Recipes',style: TextStyle(fontSize: 25.sp,fontWeight: FontWeight.bold),),
          Image.asset('assets/images/logo.png'),
         
       ],
