@@ -10,14 +10,14 @@ part 'home_state.dart';
 
 class HomeCubit extends Cubit<HomeState> {
   final Recpiesrepo recipesRepo;
-  final Countrys? country;
   
-  HomeCubit(this.recipesRepo, this.country) : super(HomeInitial());
+  
+  HomeCubit(this.recipesRepo,) : super(HomeInitial());
 
-  Future<List<Recpies>> fetchAllData() async {
+  Future<List<Recpies>> fetchAllData(String country) async {
     try {
       emit(HomeLoading());
-      final response = await recipesRepo.getRecpies(country!.ap);
+      final response = await recipesRepo.getRecpies(country);
       emit(HomeLoaded(resipes: response));
       return response;
     } catch (e) {

@@ -23,9 +23,9 @@ import 'package:recipes/features/home/ui/pages/home_view.dart';
     GoRoute(
       path: '/h',
       builder: (context, state) {
-        final Countrys? country = state.extra as Countrys?;
+     
         return BlocProvider(
-          create: (context) => HomeCubit(Recpiesrepo(dioConsumer: DioConsumer(dio: Dio())),country)..fetchAllData(),
+          create: (context) => HomeCubit(Recpiesrepo(dioConsumer: DioConsumer(dio: Dio())))..fetchAllData('a'),
           child: HomeView(),
         );
       },
