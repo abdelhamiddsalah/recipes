@@ -1,13 +1,14 @@
-import 'package:recipes/core/api/webService.dart';
+import 'package:recipes/core/api/dio_consumer.dart';
+
 import 'package:recipes/core/models/recpiesModel.dart';
 
 class Recpiesrepo {
-  final Webservice webservice;
+  final  DioConsumer dioConsumer;
 
-  Recpiesrepo({required this.webservice});
+  Recpiesrepo({required this.dioConsumer});
 
-  Future<List<Recpies>> getRecpies(String sortBy) async {
-    final recpies = await webservice.getRepices(sortBy);
+  Future<List<Recpies>> getRecpies(String categories) async {
+    final recpies = await dioConsumer.get(categories);
     List<Recpies> data = [];
     
       for (var recpie in recpies) {
