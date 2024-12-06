@@ -1,10 +1,22 @@
 import 'package:dio/dio.dart';
+import 'package:recipes/core/api/apiInterSaptors.dart';
 import 'package:recipes/core/api/api_consumer.dart';
 
 class DioConsumer extends ApiConsumer{
   final Dio dio;
+  
 
-  DioConsumer({required this.dio});
+  DioConsumer({required this.dio}){
+   
+    dio.options.baseUrl = 'https://www.themealdb.com/api/json/v1/1/';
+    dio.interceptors.add(Apiintersaptors());
+    dio.interceptors.add(LogInterceptor(
+        request: true,
+        requestHeader: true,
+        requestBody: true,
+        responseBody: true));
+ 
+  }
   @override
   Future delete(String path, {Object? data, Map<String, dynamic>? queryParams}) async{
    try {
@@ -19,7 +31,7 @@ class DioConsumer extends ApiConsumer{
   Future get(String path, {Object? data, Map<String, dynamic>? queryParams}) async{
  try {
   final response=await dio.get(path,data: data,queryParameters: queryParams);
-  return response.data['recipes'];
+  return response.data;
 } on Exception catch (e) {
   // TODO
 }
