@@ -1,12 +1,11 @@
+// ignore_for_file: camel_case_types
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:recipes/core/constants/colors.dart';
 
 class rowstar extends StatelessWidget {
   const rowstar({
     super.key,
   });
-
   @override
   Widget build(BuildContext context) {
     return const Row(

@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:recipes/core/api/dio_consumer.dart';
 import 'package:recipes/core/api/repiesRepo.dart';
+import 'package:recipes/core/models/recpiesModel.dart';
 import 'package:recipes/features/Onbording/ui/pages/onboardingPage.dart';
 import 'package:recipes/features/details/ui/details_view.dart';
 import 'package:recipes/features/home/logic/cubit/home_cubit.dart';
@@ -32,7 +33,9 @@ class Routerapp {
     GoRoute(
       path: '/d',
       builder: (context, state) {
-        return DetailsView();
+        return DetailsView(
+          recpies: state.extra as Recpies,
+        );
       },
     ),
     GoRoute(

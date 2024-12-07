@@ -2,13 +2,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:recipes/core/constants/colors.dart';
+import 'package:recipes/core/models/recpiesModel.dart';
 import 'package:recipes/features/details/ui/widgets/title_in_details.dart';
 
 class DetailsContent extends StatelessWidget {
-  const DetailsContent({super.key});
-
+  const DetailsContent({super.key, required this.recpies});
+ final Recpies recpies;
   @override
   Widget build(BuildContext context) {
+
     return Expanded(
       child: Container(
         padding: const EdgeInsets.all(16.0),
@@ -19,32 +21,37 @@ class DetailsContent extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              title_in_details(),
-              SizedBox(height: 16),
+              TitleInDetails(recpies: recpies,),
+              const SizedBox(height: 8),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text('Category', style: TextStyle(color: mainColor,fontSize: 20,fontWeight: FontWeight.bold),),
+                  Text(
+                    recpies.strCategory.toString(),
+                    style: TextStyle(fontSize: 16.sp, color: greyColor),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 16),
               Text(
-                'Description',
+                maxLines: 7,
+                overflow: TextOverflow.ellipsis,
+                recpies.strInstructions.toString(),
                 style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 8),
-              Text(
-                'Indonesian Fried Chicken or Ayam Goreng, is a delicious and popular dish that showcases the vibrant flavors of Indonesian cuisine.',
-                style: TextStyle(fontSize: 16.sp, color: greyColor),
-              ),
-              SizedBox(height: 16),
-              Text(
-                'Ingredients',
-                style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.bold),
-              ),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
+              const Text('Ingredients', style: TextStyle(color: mainColor, fontSize: 22, fontWeight: FontWeight.bold),),
+              SizedBox(height: 20.h,),
               Text(
                 '''
-- 300 grams of egg noodles, boiled until tender
-- 6 tbsp onion chicken oil
-- 3 tsp soy sauce
-- 2 bunch spring onions, chopped briefly 
-- 250 grams chicken meat, diced
+- 300 ${recpies.strIngredient1},
+- 6 ${recpies.strIngredient2},
+- 3 ${recpies.strIngredient3}
+- 2 ${recpies.strIngredient4}
+- 250 ${recpies.strIngredient5}
                 ''',
-                style: TextStyle(fontSize: 16, color: greyColor),
+                style: const TextStyle(fontSize: 20, color: greyColor,fontWeight: FontWeight.w400),
               ),
             ],
           ),
