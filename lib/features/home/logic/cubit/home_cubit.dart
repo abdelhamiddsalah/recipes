@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:recipes/core/api/repiesRepo.dart';
 import 'package:recipes/core/models/recpiesModel.dart';
-import 'package:recipes/features/home/ui/data/countrys.dart';
+import 'package:recipes/features/home/data/countrys.dart';
 
 part 'home_state.dart';
 

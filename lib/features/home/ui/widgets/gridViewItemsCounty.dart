@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:recipes/features/home/ui/data/countrys.dart';
+import 'package:recipes/features/home/data/countrys.dart';
 import 'package:recipes/features/home/ui/widgets/containerItemCountry.dart';
 
 class GridViewitemscountry extends StatelessWidget {
