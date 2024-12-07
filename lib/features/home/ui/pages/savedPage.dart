@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:recipes/core/constants/colors.dart';
-import 'package:recipes/features/home/ui/pages/itemSaved.dart';
+import 'package:recipes/features/home/ui/widgets/itemSaved.dart';
 
 class Savedpage extends StatelessWidget {
   const Savedpage({super.key});
