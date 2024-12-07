@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:recipes/core/api/dio_consumer.dart';
 import 'package:recipes/core/api/repiesRepo.dart';
 import 'package:recipes/core/models/recpiesModel.dart';
+import 'package:recipes/core/widgets/navBar.dart';
 import 'package:recipes/features/Onbording/ui/pages/onboardingPage.dart';
 import 'package:recipes/features/details/ui/details_view.dart';
 import 'package:recipes/features/home/logic/cubit/home_cubit.dart';
@@ -26,7 +27,7 @@ class Routerapp {
           create: (context) =>
               HomeCubit(Recpiesrepo(dioConsumer: DioConsumer(dio: Dio())))
                 ..fetchAllData('a'),
-          child: HomeView(),
+          child: CurvedNavbar(),
         );
       },
     ),
