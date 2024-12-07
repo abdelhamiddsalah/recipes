@@ -1,29 +1,32 @@
-// ignore_for_file: camel_case_types
-
 import 'package:flutter/material.dart';
+import 'package:recipes/core/models/recpiesModel.dart';
 import 'package:recipes/features/details/ui/widgets/rowstar.dart';
 
-class title_in_details extends StatelessWidget {
-  const title_in_details({
+class TitleInDetails extends StatelessWidget {
+  const TitleInDetails({
     super.key,
+    required this.recpies,
   });
+
+  final Recpies recpies;
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-         Text(
-      'Spiced Fried Chicken',
-      style: TextStyle(
-        fontSize: 24,
-        fontWeight: FontWeight.bold,
-      ),
-    ),
-        rowstar(),
+        Expanded(
+          child: Text(
+            recpies.strMeal.toString(),
+            style: const TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+            ),
+            overflow: TextOverflow.ellipsis,
+          ),
+        ),
+        const rowstar(), 
       ],
     );
   }
 }
-
-

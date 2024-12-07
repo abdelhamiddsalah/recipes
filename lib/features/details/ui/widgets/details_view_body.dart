@@ -1,27 +1,26 @@
 // details_view_body.dart
 import 'package:flutter/material.dart';
+import 'package:recipes/core/models/recpiesModel.dart';
 import 'package:recipes/features/details/ui/widgets/backButton.dart';
 import 'package:recipes/features/details/ui/widgets/bookmarkButton.dart';
 import 'package:recipes/features/details/ui/widgets/detailsContent.dart';
-import 'package:recipes/features/details/ui/widgets/topImage.dart';
-
-
+import 'package:recipes/features/details/ui/widgets/topImage.dart'; 
 class DetailsViewBody extends StatelessWidget {
-  const DetailsViewBody({super.key});
-
+  const DetailsViewBody({super.key, required this.recpies});
+ final Recpies recpies;
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Stack(
         children: [
           Column(
             children: [
-              TopImage(),
-              DetailsContent(),
+               TopImage(recipes: recpies,),
+              DetailsContent(recpies: recpies,),
             ],
           ),
-          BackButtonWidget(),
-          BookmarkButton(),
+          const BackButtonWidget(),
+          const BookmarkButton(),
         ],
       ),
     );

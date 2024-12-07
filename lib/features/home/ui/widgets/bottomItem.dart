@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:recipes/core/models/recpiesModel.dart';
 import 'package:recipes/features/home/ui/widgets/desc_in_item.dart';
 
@@ -8,7 +9,12 @@ class Bottomitem extends StatelessWidget {
   final Recpies recipes;
   @override
   Widget build(BuildContext context) {
-    return Material(
+
+    return InkWell(
+      onTap: () {
+        GoRouter.of(context).push('/d',  extra: recipes,);
+      },
+      child:  Material(
       color: Colors.white,
       borderRadius: BorderRadius.circular(20),
       elevation: 10.0,
@@ -34,6 +40,7 @@ class Bottomitem extends StatelessWidget {
           ),
         ],
       ),
+      )
     );
   }
 }
