@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hive_flutter/adapters.dart';
+import 'package:recipes/core/models/recpiesModel.dart';
 import 'package:recipes/core/myrouter/routerApp.dart';
 
 
-void main() {
+void main() async{
   runApp(const Recipes());
+  await Hive.initFlutter();
+   Hive.registerAdapter(RecpiesAdapter());
+   var box=await Hive.openBox<Recpies>('recpiesBox');
 }
 
 class Recipes extends StatelessWidget {
