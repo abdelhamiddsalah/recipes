@@ -20,7 +20,7 @@ class GridViewitemscountry extends StatelessWidget {
       crossAxisSpacing: 10,
       // عدد العناصر
       itemBuilder: (BuildContext context, int index) {
-        return Cotaineritemcountry(
+        return  Cotaineritemcountry(
           onTap: () {
             GoRouter.of(context).push('/c',extra: data[index]);
           },

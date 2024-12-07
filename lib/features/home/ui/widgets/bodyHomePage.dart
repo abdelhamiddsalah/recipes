@@ -18,27 +18,22 @@ class Bodyhomepage extends StatelessWidget {
         children: [
           const Appbarhomepage(),
           const SizedBox(height: 20),
-           Text(
+          Text(
             'What is your favorite country?',
             style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 20),
           SizedBox(
-      height: MediaQuery.of(context).size.height*.14,
-      child: GridViewitemscountry()
-    ),
-    
-           const SizedBox(height: 20),
-             Text(
+              height: MediaQuery.of(context).size.height * .14,
+              child: const GridViewitemscountry()),
+          const SizedBox(height: 20),
+          Text(
             'All Recipes ',
             style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold),
           ),
-        
-         ListviewInHome(),
+          const Expanded(child: ListviewInHome()),
         ],
       ),
     );
   }
 }
-
-

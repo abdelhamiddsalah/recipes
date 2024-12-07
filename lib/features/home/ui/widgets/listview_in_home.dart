@@ -12,19 +12,17 @@ class ListviewInHome extends StatelessWidget {
     return BlocBuilder<HomeCubit, HomeState>(
       builder: (context, state) {
         if (state is HomeLoaded) {
-          return Expanded(
-            child: ListView.builder(
-              itemCount: state.resipes.length,
-              itemBuilder: (context, builder) {
-                return Padding(
-                  padding: const EdgeInsets.only(bottom: 20),
-                  child: Bottomitem(recipes: state.resipes[builder],),
-                );
-              },
-            ),
+          return ListView.builder(
+            itemCount: state.resipes.length,
+            itemBuilder: (context, builder) {
+              return Padding(
+                padding: const EdgeInsets.only(bottom: 20),
+                child: Bottomitem(recipes: state.resipes[builder],),
+              );
+            },
           );
         } else {
-          return Center(
+          return const Center(
             child: CircularProgressIndicator(),
           );
         }

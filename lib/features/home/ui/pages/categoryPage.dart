@@ -20,11 +20,11 @@ class Categorypage extends StatelessWidget {
         appBar: AppBar(
           title: Row(
             children: [
-              Text(countrys.flag, style: TextStyle(fontSize: 20.sp)),
+              Text(countrys.flag, style: TextStyle(fontSize: 25.sp)),
               const SizedBox(width: 8),
               Text(
                 countrys.name,
-                style: TextStyle(fontSize: 16.sp),
+                style: TextStyle(fontSize: 20.sp),
               ),
             ],
           ),
