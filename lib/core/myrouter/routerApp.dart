@@ -7,12 +7,10 @@ import 'package:recipes/features/Onbording/ui/pages/onboardingPage.dart';
 import 'package:recipes/features/details/ui/details_view.dart';
 import 'package:recipes/features/home/logic/cubit/home_cubit.dart';
 import 'package:recipes/features/home/data/countrys.dart';
+import 'package:recipes/features/home/ui/pages/categoryPage.dart';
 import 'package:recipes/features/home/ui/pages/home_view.dart';
 
- class Routerapp {
-
- 
-
+class Routerapp {
   static var router = GoRouter(routes: <RouteBase>[
     GoRoute(
       path: '/',
@@ -23,9 +21,10 @@ import 'package:recipes/features/home/ui/pages/home_view.dart';
     GoRoute(
       path: '/h',
       builder: (context, state) {
-     
         return BlocProvider(
-          create: (context) => HomeCubit(Recpiesrepo(dioConsumer: DioConsumer(dio: Dio())))..fetchAllData('a'),
+          create: (context) =>
+              HomeCubit(Recpiesrepo(dioConsumer: DioConsumer(dio: Dio())))
+                ..fetchAllData('a'),
           child: HomeView(),
         );
       },
@@ -34,6 +33,15 @@ import 'package:recipes/features/home/ui/pages/home_view.dart';
       path: '/d',
       builder: (context, state) {
         return DetailsView();
+      },
+    ),
+    GoRoute(
+      path: '/c',
+      builder: (context, state) {
+        
+        return Categorypage(
+          countrys: state.extra as Countrys,
+        );
       },
     ),
   ]);
