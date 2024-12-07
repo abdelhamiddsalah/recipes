@@ -11,7 +11,7 @@ class HiveCubit extends Cubit<HiveState> {
 
   List<Recpies>? recpies;
 
-   addArtical(Recpies recpies) async {
+   addRecpies(Recpies recpies) async {
     try {
       var notebox = Hive.box<Recpies>('recpiesBox');
 
@@ -22,7 +22,7 @@ class HiveCubit extends Cubit<HiveState> {
       emit(AddRecpiesfailure(error: e.toString()));
     }
   }
-  fatchAllArticales() {
+  fatchAllRecpies() {
     var notebox = Hive.box<Recpies>('recpiesBox');
     recpies = notebox.values.toList();
     emit(RecpiesSuccess());
