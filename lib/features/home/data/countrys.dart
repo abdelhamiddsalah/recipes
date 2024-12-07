@@ -7,7 +7,7 @@ class Countrys {
 }
 
 List<Countrys> data = [
-  Countrys(name: 'Italy', flag: '🇮🇹', ap: 'a'),
+ 
   Countrys(name: 'Japan', flag: '🇯🇵', ap: 'b'),
   Countrys(name: 'Mexico', flag: '🇲🇽', ap: 'c'),
   Countrys(name: 'India', flag: '🇮🇳', ap: 'd'),
