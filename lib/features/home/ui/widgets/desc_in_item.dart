@@ -5,19 +5,19 @@ import 'package:recipes/features/details/ui/widgets/rowstar.dart';
 
 class desc_in_item extends StatelessWidget {
   const desc_in_item({
-    super.key,
+    super.key, required this.text,
   });
-
+  final String text;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Column(
         children: [
-          const Align(
+           Align(
             alignment: Alignment.topLeft,
             child: Text(
-              'Spiced Fried Chicken',
+           text   ,
               style: TextStyle(
                 fontWeight: FontWeight.w600,
                 fontSize: 18,

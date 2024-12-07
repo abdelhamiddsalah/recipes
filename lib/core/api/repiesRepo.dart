@@ -8,7 +8,7 @@ class Recpiesrepo {
   Recpiesrepo({required this.dioConsumer});
 
   Future<List<Recpies>> getRecpies(String categories) async {
-    final recpies = await dioConsumer.get(categories);
+    final recpies = await dioConsumer.get('search.php?f=$categories');
     List<Recpies> data = [];
     
       for (var recpie in recpies) {
